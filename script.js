@@ -87,7 +87,7 @@ const questionGroups = [
     {
         id: 'group6',
         name: 'المجموعة 6',
-        description: 'فارغ',
+        description: 'عبدالناصر سعد',
         file: 'questions-group6.js'
     },
     {
