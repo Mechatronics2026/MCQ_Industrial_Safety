@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200">
+    <title>اختبار سلامة صناعية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="quiz-container">
+        <div class="header">
+            <h1>اختبار سلامة صناعية</h1>
+            <button id="theme-toggle" class="theme-toggle" title="تبديل السمة">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+        <div class="score-display hide">النقاط: <span id="score">0</span></div>
+
+        <!-- شاشة اختيار المجموعة -->
+        <div id="group-selection-screen" class="screen active">
+            <div class="mode-selection">
+                <div class="credits">
+                    <p>أسئلة متعددة الخيارات في السلامة الصناعية</p>
+                    <p>من تجميعات طلاب الميكاترونكس</p>
+                    <p>الدفعة الثالثة / جامعة ذمار</p>
+                </div>
+                <h2>اختر مجموعة الأسئلة</h2>
+                <div class="group-buttons" id="group-buttons">
+                    <!-- سيتم ملؤها ديناميكياً بواسطة JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- شاشة اختيار نوع الاختبار -->
+        <div id="test-order-screen" class="screen">
+            <div class="mode-selection">
+                <h2>اختر طريقة الاختبار</h2>
+                <div class="mode-buttons">
+                    <button id="sequential-btn" class="btn">متسلسل</button>
+                    <button id="random-btn" class="btn">عشوائي</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- شاشة الأسئلة -->
+        <div id="question-container" class="screen">
+            <div class="question-container">
+                <div class="question-number">
+                    <span>سؤال <span id="current-question-num">1</span> من <span id="total-questions">0</span></span>
+                    <span id="progress-percent">0%</span>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+                <div class="question-text" id="question-text"></div>
+                <div class="options-container" id="options-container"></div>
+                <div class="feedback" id="feedback"></div>
+                <div class="correct-answer-display" id="correct-answer-display"></div>
+                <div class="explanation hide" id="explanation">
+                    <div class="explanation-title">التوضيح:</div>
+                    <div id="explanation-text"></div>
+                </div>
+                <div class="navigation-buttons">
+                    <button id="prev-btn" class="btn btn-secondary hide">السابق</button>
+                    <button id="skip-btn" class="btn btn-skip">تخطي السؤال</button>
+                    <button id="next-btn" class="btn hide">التالي</button>
+                </div>
+                <div class="skip-info hide" id="skip-info"></div>
+                <button id="home-btn" class="btn btn-secondary hide">العودة للرئيسية</button>
+            </div>
+        </div>
+
+        <!-- شاشة النتائج -->
+        <div id="result-screen" class="screen">
+            <div class="result-screen">
+                <div class="celebration" id="celebration">🎉</div>
+                <h2>اكتمل الاختبار!</h2>
+                <p>نتيجتك النهائية هي:</p>
+                <p class="final-score"><span id="final-score">0</span></p>
+                
+                <div class="time-taken">
+                    <p>الوقت المستغرق: <span id="time-taken">0:00</span></p>
+                </div>
+                
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <div class="stat-value" id="correct-answers">0</div>
+                        <div class="stat-label">الإجابات الصحيحة</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="incorrect-answers">0</div>
+                        <div class="stat-label">الإجابات الخاطئة</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="skipped-answers">0</div>
+                        <div class="stat-label">الأسئلة المتخطاة</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="percentage">0%</div>
+                        <div class="stat-label">معدل النجاح</div>
+                    </div>
+                </div>
+                
+                <button id="restart-btn" class="btn">العودة للقائمة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- سيتم تحميل ملفات الأسئلة ديناميكياً -->
+    <script src="script.js"></script>
+</body>
+</html>
